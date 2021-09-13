@@ -79,7 +79,7 @@ async def encc(e):
                 [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
             ],
         )
-        cmd = f'ffmpeg -i "{dl}" -preset ultrafast -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y'
+        cmd = f'ffmpeg -i  "{dl}" -map 0 -c:v libx265 -metadata title=krispEncodes -pix_fmt yuv420p -preset fast -s 800x480 -crf 29 -b:v 2M -profile:a  aac_he_v2 -c:a libopus -ac 2 -vbr 2 -ab 40k -c:s copy "{out}" -y'
         process = await asyncio.create_subprocess_shell(
             cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
         )
@@ -87,7 +87,7 @@ async def encc(e):
         er = stderr.decode()
         try:
             if er:
-                await e.edit(str(er) + "\n\n**ERROR** Contact @danish_00")
+                await e.edit(str(er) + "\n\n**ERROR** Contact @Anshu888o)
                 COUNT.remove(e.chat_id)
                 os.remove(dl)
                 return os.remove(out)
@@ -149,7 +149,7 @@ async def sample(e):
             [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
         ],
     )
-    ncmd = f'ffmpeg -i "{dl}" -preset ultrafast -ss {ss} -to {dd} -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y'
+    ncmd = f'ffmpeg -i  "{dl}" -map 0 -c:v libx265 -metadata title=krispEncodes -pix_fmt yuv420p -preset fast -s 800x480 -crf 29 -b:v 2M -profile:a  aac_he_v2 -c:a libopus -ac 2 -vbr 2 -ab 40k -c:s copy "{out}" -y'
     process = await asyncio.create_subprocess_shell(
         ncmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
@@ -157,7 +157,7 @@ async def sample(e):
     er = stderr.decode()
     try:
         if er:
-            await e.edit(str(er) + "\n\n**ERROR** Contact @danish_00")
+            await e.edit(str(er) + "\n\n**ERROR** Contact @Anshu888o")
             COUNT.remove(e.chat_id)
             os.remove(dl)
             os.remove(out)
@@ -325,7 +325,7 @@ async def customenc(e, key):
             [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
         ],
     )
-    cmd = f'ffmpeg -i "{dl}" -preset ultrafast -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y'
+    cmd = f'ffmpeg -i  "{dl}" -map 0 -c:v libx265 -metadata title=krispEncodes -pix_fmt yuv420p -preset fast -s 800x480 -crf 29 -b:v 2M -profile:a  aac_he_v2 -c:a libopus -ac 2 -vbr 2 -ab 40k -c:s copy "{out}" -y'
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
@@ -333,7 +333,7 @@ async def customenc(e, key):
     er = stderr.decode()
     try:
         if er:
-            await e.edit(str(er) + "\n\n**ERROR** Contact @danish_00")
+            await e.edit(str(er) + "\n\n**ERROR** Contact @Anshu888o")
             COUNT.remove(e.chat_id)
             os.remove(dl)
             return os.remove(out)
