@@ -60,7 +60,7 @@ async def beck(event):
         buttons=[
             [Button.inline("HELP", data="ihelp")],
             [
-                Button.url("SOURCE CODE", url="https://t.me/GorgeousAndGloreous"),
+                Button.url("MOVIES GROUP", url="https://t.me/GorgeousAndGloreous"),
                 Button.url("DEVELOPER", url="t.me/Anshu888o"),
             ],
         ],
